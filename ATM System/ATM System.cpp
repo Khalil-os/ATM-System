@@ -5,6 +5,13 @@
 
 using namespace std;
 
+// This is Important : This variable is path of your File (.txt) Clients
+// in Your File Add a line : Account_Number#//#Password#//#Name#//#Phone#//#Balance
+// Like That : A15#//#2006#//#Khalil#//#0682324796#//#20000.000000
+// And My FIle Of Clients i will put it in Repostory ( Bank )
+
+string File_Cliets = "C:\\Users\\HP\\source\\repos\\Bank\\Bank\\Client";
+
 enum enTransactions {
     Quick_Withraw = 1,
     Normal_Withraw = 2,
@@ -330,7 +337,7 @@ void ShowChooseTransactions(short choose) {
     case Quick_Withraw:
 
         system("cls");
-        QuickWithraw(GetinformationFromFileToVector_string("C:\\Users\\HP\\source\\repos\\Bank\\Bank\\Client"), "C:\\Users\\HP\\source\\repos\\Bank\\Bank\\Client");
+        QuickWithraw(GetinformationFromFileToVector_string(File_Cliets), File_Cliets);
         cout << endl << endl;
         system("pause");
         system("cls");
@@ -343,7 +350,7 @@ void ShowChooseTransactions(short choose) {
         cout << "----------------------------------------------------\n";
         cout << "\t\t" << "Normal Withdraw Screen" << endl;
         cout << "----------------------------------------------------\n";
-        Withdraw(GetinformationFromFileToVector_string("C:\\Users\\HP\\source\\repos\\Bank\\Bank\\Client"), "C:\\Users\\HP\\source\\repos\\Bank\\Bank\\Client");
+        Withdraw(GetinformationFromFileToVector_string(File_Cliets), File_Cliets);
         cout << endl << endl;
         system("pause");
         system("cls");
@@ -356,7 +363,7 @@ void ShowChooseTransactions(short choose) {
         cout << "----------------------------------------------------\n";
         cout << "\t\t" << "Deposit Screen" << endl;
         cout << "----------------------------------------------------\n";
-        Deposits(GetinformationFromFileToVector_string("C:\\Users\\HP\\source\\repos\\Bank\\Bank\\Client") , "C:\\Users\\HP\\source\\repos\\Bank\\Bank\\Client");
+        Deposits(GetinformationFromFileToVector_string(File_Cliets) , File_Cliets);
         cout << endl << endl;
         system("pause");
         system("cls");
@@ -378,7 +385,7 @@ void ShowChooseTransactions(short choose) {
     case Logout:
 
         system("cls");
-        LogIn(GetinformationFromFileToVector("C:\\Users\\HP\\source\\repos\\Bank\\Bank\\Client"));
+        LogIn(GetinformationFromFileToVector(File_Cliets));
         break;
 
     default:
@@ -421,5 +428,5 @@ void LogIn(vector <sClient> vClient) {
 
 int main()
 {
-    LogIn(GetinformationFromFileToVector("C:\\Users\\HP\\source\\repos\\Bank\\Bank\\Client"));
+    LogIn(GetinformationFromFileToVector(File_Cliets));
 }
